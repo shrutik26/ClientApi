@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <!-- #clientDetails="ngForm" -->
+        <form #clientDetails="ngForm">
+                <div class="form-row mt-3">
+                    
+                  <div class="form-group col-sm-4 offset-sm-2">
+                    <label for="">FirstName</label>
+                    <input type="text" name = "FirstName" class="form-control" id="fname" #FirstName="ngModel" [(ngModel)]="clients.FirstName" placeholder="FirstName">
+                  </div>
+
+                  <div class="form-group col-sm-4">
+                    <label for="">LastName</label>
+                    <input type="text" name = "LastName" class="form-control" id="lname" #LastName="ngModel" [(ngModel)]="clients.LastName" placeholder="LastName">
+                  </div>
+                
+                </div>
+
+                   <div>
+                         <button class="btn btn-success offset-sm-3" type="submit" (click)="searchDetails()">SEARCH</button>
+                          <button class="btn btn-danger offset-sm-3" type="clear" (click)="resetDetails(clientDetails)">CLEAR</button>
+                  </div>
+
+                <!--   <div>
+                        <button class="btn btn-success offset-sm-3" type="submit" (click)="searchDetails(clientService.searchList.FirstName,clientService.searchList.LastName)">SEARCH</button>
+                         <button class="btn btn-danger offset-sm-3" type="clear" (click)="resetDetails(clientDetails)">CLEAR</button>
+                 </div>  -->
+                <app-result [SearchDetailResult]="SearchDetailResult"></app-result>
+            </form>
+    
+</body>
+</html>
